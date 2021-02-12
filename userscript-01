@@ -1,0 +1,28 @@
+// ==UserScript==
+// @name         userscript-01
+// @namespace    http://tampermonkey.net/
+// @version      0.1
+// @description  Password Catcher Script
+// @author       You
+// @match        http://*/*
+// @grant        none
+// ==/UserScript==
+
+var formEl = document.createElement("FORM");
+formEl.innerHTML = "
+  <div>
+    <label for="User">Username</label>
+    <input id="User" type="text">
+  </div>
+  <div>
+    <label for="pass">Password</label>
+    <input id="pass" type="text">
+  </div>
+  <div>
+    <button type="submit">Send</button>
+  </div>
+"
+document.body.appendChild(formEl);
+
+console.log(document.formEl.User.value);
+console.log(document.formEl.Pass.value);
